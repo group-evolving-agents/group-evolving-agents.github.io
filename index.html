@@ -234,7 +234,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
       <div class="column is-four-fifths">
         <h2 class="title is-3" style="margin-bottom: 0.5rem;">Methodology</h2>
         <p class="is-size-6" style="color: #64748b;">
-          Experience sharing and group-level evolution for open-ended self-improvement.
+          Parent Group Selection + Open-Ended Group Evolution
         </p>
       </div>
     </div>
@@ -291,14 +291,10 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
             </div>
             <div style="flex: 1;">
               <h3 class="title is-4" style="margin-bottom: 0.5rem;">
-                Group-Level Experience Sharing
+                Stage1: Parent Group Selection
               </h3>
               <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
-                GEA treats a <strong>group of agents</strong> as the fundamental evolutionary unit.
-                During evolution, agents explicitly share and reuse experiences such as tool-use traces,
-                successful problem-solving strategies, and code patches. This shared experience pool
-                breaks the isolation of tree-structured evolution, enabling discoveries from one agent
-                to become reusable stepping stones for the entire group.
+                At each iteration, <strong>GEA</strong> selects a parent group using a Performance-Novelty criterion. The key idea is to balance the <strong>immediate task-solving competence</strong> with <strong>long-term evolutionary diversity and potential</strong>.
               </p>
             </div>
           </div>
@@ -323,15 +319,21 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
             </div>
             <div style="flex: 1;">
               <h3 class="title is-4" style="margin-bottom: 0.5rem;">
-                Reflection → Evolve → Evaluate Loop
+                Stage2: Open-Ended Group Evolution
               </h3>
               <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
-                Each iteration follows a structured loop. Agents first <strong>reflect</strong> on the shared experience
-                to identify weaknesses and propose actionable improvements (e.g., workflow changes, tool usage,
-                prompt strategy). They then <strong>evolve</strong> by implementing concrete patches to their codebase,
-                and finally <strong>evaluate</strong> the updated agents on downstream tasks. This loop preserves
-                exploratory diversity while converting it into sustained long-term progress through explicit
-                within-group reuse.
+                In the parent group, each agent contributes its evolutionary experience — including tool-use logs,
+                framework patches, and successful trajectories — to a shared experience pool. This pool is provided
+                as input to every agent’s reflection module, which identifies evolution needs related to workflow design,
+                tool usage, and prompting strategies. These directives are then passed to the evolution module to
+                generate framework-level patches. Finally, the updated agent is evaluated on downstream programming
+                tasks through the action module.
+                
+                Through explicit group-level experience sharing, each agent evolves by leveraging collective knowledge
+                while still adapting its own codebase. This enables agents to diverge through complementary improvements
+                while benefiting from shared discoveries, allowing the group to explore diverse evolutionary directions
+                and convert temporary exploratory diversity into sustained cumulative progress.
+
               </p>
             </div>
           </div>
