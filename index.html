@@ -192,18 +192,22 @@ figcaption {
 </section>
 
 <section class="section">
-  <figure class="image is-centered" style="width: 70%; margin: 0 auto 1rem;  text-align: center;">
-    <img 
-      src="./static/fig1.png" 
-      alt="image" 
-      style="width: 100%; height: auto;" 
-      loading="lazy" 
-    />
+  <figure class="image is-centered" style="width: 70%; margin: 0 auto 1rem; text-align: center;">
+    
+    <iframe
+      src="./static/pipeline_overall.pdf"
+      width="100%"
+      height="520px"
+      style="border:none;">
+    </iframe>
+
     <figcaption style="text-align: center;">
-      Figure 1. We perform in-depth analysis on LRMs and find that (1) Safety SFT LRMs are vulnerable to jailbreaks like multi-turn attacks. (2) LRMs typically first understand the query, then proceed to think about how to answer. (3) Upper right: Safety aha-moment in the key sentence can lead to a safe response. (4) Bottom right: Based on the query understanding content (U), the SFT model can usually identify unsafe jailbreak queries explicitly, but not when responding to the query.
+      Figure 1. Overview of the Group-Evolving Agents (GEA) pipeline.
     </figcaption>
+
   </figure>
 </section>
+
 
   <div class="container is-max-desktop">
     <!-- Abstract. -->
