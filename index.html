@@ -226,86 +226,36 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
     </div>
 
     <!-- Methodology -->
-<section class="section" id="methodology">
+<section class="section">
   <div class="container is-max-desktop">
 
-    <div class="has-text-centered mb-6">
-      <h2 class="title is-3">Methodology</h2>
-      <p class="subtitle is-6" style="color:#64748b;">
-        Open-ended self-improvement via group-level experience sharing.
-      </p>
-    </div>
+    <div class="columns is-vcentered">
 
-    <div class="columns is-vcentered is-variable is-8">
-      <!-- Left: Figure -->
-      <div class="column is-6">
-        <figure class="image" style="border-radius: 14px; overflow: hidden; background: #f8fafc; padding: 10px;">
-          <img src="./static/gea_method.png" alt="GEA methodology figure" style="width:100%; height:auto;">
-        </figure>
-        <p class="has-text-centered" style="font-size: 14px; color:#64748b; margin-top: 10px;">
-          Figure 2. Overview of the Group-Evolving Agents (GEA) workflow.
+      <!-- 左侧图片 -->
+      <div class="column is-half" style="text-align:center;">
+        <img 
+          src="./static/algorithm1.jpg" 
+          alt="Algorithm" 
+          style="width:100%; height:auto;"
+        />
+      </div>
+
+      <!-- 右侧文字 -->
+      <div class="column is-half">
+        <h2 class="title is-4">Algorithm</h2>
+        <p>
+          The Group-Evolving Agents algorithm maintains a shared experience
+          pool across agents. Each iteration consists of reflection,
+          evolution, and evaluation, enabling cumulative improvement
+          across generations.
         </p>
       </div>
 
-      <!-- Right: Text blocks -->
-      <div class="column is-6">
-
-        <!-- Block 1 -->
-        <div style="display:flex; gap:12px; margin-bottom: 18px; align-items:flex-start;">
-          <span style="
-            display:inline-flex; width:32px; height:32px; border-radius: 999px;
-            background:#eef2ff; color:#4f46e5; font-weight:700;
-            justify-content:center; align-items:center; flex:0 0 auto;">
-            1
-          </span>
-
-          <div>
-            <h3 class="title is-5" style="margin-bottom: 6px;">
-              Group-level Experience Pool
-            </h3>
-            <p style="color:#334155; line-height:1.7;">
-              Each agent contributes evolutionary artifacts (e.g., tool logs, patches, and successful trajectories)
-              into a shared experience pool. Agents then reuse and adapt these experiences to guide their next
-              evolution steps, converting stepping-stone discoveries into cumulative progress.
-            </p>
-
-            <!-- Optional equation/box like the reference page -->
-            <div style="
-              margin-top: 12px; padding: 14px 16px; border-radius: 12px;
-              background:#f8fafc; border:1px solid #e2e8f0; color:#334155;
-              font-family: 'Source Serif 4', serif; font-size: 15px;">
-              <span style="font-family: 'Inter', sans-serif; font-weight:600; margin-right:6px;">Key idea:</span>
-              Share → Reuse → Consolidate across agents, not isolated branches.
-            </div>
-          </div>
-        </div>
-
-        <!-- Block 2 -->
-        <div style="display:flex; gap:12px; align-items:flex-start;">
-          <span style="
-            display:inline-flex; width:32px; height:32px; border-radius: 999px;
-            background:#f5f3ff; color:#7c3aed; font-weight:700;
-            justify-content:center; align-items:center; flex:0 0 auto;">
-            2
-          </span>
-
-          <div>
-            <h3 class="title is-5" style="margin-bottom: 6px;">
-              Reflection → Evolve → Evaluate
-            </h3>
-            <p style="color:#334155; line-height:1.7;">
-              Each agent runs a structured loop: it reflects on shared experience to identify improvement needs
-              (workflow, tool usage, prompting), implements patches, and evaluates the updated agent on downstream
-              coding tasks. Group evolution enables complementary learning and robust transfer across model backbones.
-            </p>
-          </div>
-        </div>
-
-      </div>
     </div>
 
   </div>
 </section>
+
 
     
 <!-- </section> -->
