@@ -370,6 +370,41 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
   </figure>
 </section>
 
+<section class="section" style="margin-top: -1rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-variable is-6 is-centered">
+
+      <!-- Left image -->
+      <div class="column is-6 has-text-centered">
+        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
+          <img src="./static/result2.png" alt="Result figure" style="width:100%; height:auto;">
+        </figure>
+        <p style="margin-top:8px; font-size:14px; color:#64748b;">
+          Figure 4. <strong>Evolution analysis of tool discovery and integration over iterations.</strong>
+  Each row (T1--T9) corresponds to a key tool-level functionality.
+  Blue markers indicate tools that have been discovered but not yet integrated into the current best agent,
+  while red markers indicate tools integrated into the best-performing agent.
+        </p>
+      </div>
+
+      <!-- Right image -->
+      <div class="column is-6 has-text-centered">
+        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
+          <img src="./static/table1.jpg" alt="Table results" style="width:100%; height:auto;">
+        </figure>
+        <p style="margin-top:8px; font-size:14px; color:#64748b;">
+          <strong>Table 1.</strong> Comparison of performance (Success Rate) and ancestor integration across the Top-k agents on SWE-bench Verified.
+            Performance is reported as the <em>worst-case (minimum) success rate</em> among the top-k agents.
+            <em>Ancestor Count</em> denotes the count of unique historical agents integrated into the solution.
+            Notably, the worst-case performance of GEA's top-5 agents (58.3%) exceeds the single best agent from DGM (56.7%).
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
 <div class="columns is-centered has-text-centered" style="margin-top: 0rem;">
   <div class="column is-four-fifths">
