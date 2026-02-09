@@ -239,6 +239,102 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
       </div>
     </div>
 
+
+    <!-- Row 1: top image + Stage1 -->
+<div class="columns is-vcentered" style="align-items: flex-start; margin-bottom: 1rem;">
+
+  <!-- Left: Top image -->
+  <div class="column is-half">
+    <figure class="image" style="background: #f8fafc; border-radius: 12px; padding: 12px;">
+      <img
+        src="./static/algorithm1.jpg"
+        alt="GEA algorithm"
+        style="width: 100%; height: auto; border-radius: 10px;"
+        loading="lazy"
+      />
+    </figure>
+  </div>
+
+  <!-- Right: Block 1 -->
+  <div class="column is-half">
+    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+      <div
+        style="
+          width: 32px; height: 32px;
+          border-radius: 9999px;
+          background: #dbeafe;
+          color: #1d4ed8;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 0 0 auto;
+        ">
+        1
+      </div>
+      <div style="flex: 1;">
+        <h3 class="title is-4" style="margin-bottom: 0.5rem;">
+          Stage1: Parent Group Selection
+        </h3>
+        <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
+          At each iteration, <strong>GEA</strong> selects a parent group using a <strong>Performance-Novelty criterion</strong>.
+          <br><br>
+          The key idea is to balance the <strong>immediate task-solving competence</strong> with <strong>long-term evolutionary diversity and potential</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Row 2: bottom image + Stage2 -->
+<div class="columns is-vcentered" style="align-items: flex-start;">
+
+  <!-- Left: Bottom image -->
+  <div class="column is-half">
+    <figure class="image" style="background: #f8fafc; border-radius: 12px; padding: 12px;">
+      <img
+        src="./static/pipeline2.jpg"
+        alt="GEA pipeline"
+        style="width: 100%; height: auto; border-radius: 10px;"
+        loading="lazy"
+      />
+    </figure>
+  </div>
+
+  <!-- Right: Block 2 -->
+  <div class="column is-half">
+    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+      <div
+        style="
+          width: 32px; height: 32px;
+          border-radius: 9999px;
+          background: #ede9fe;
+          color: #6d28d9;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 0 0 auto;
+        ">
+        2
+      </div>
+      <div style="flex: 1;">
+        <h3 class="title is-4" style="margin-bottom: 0.5rem;">
+          Stage2: Open-Ended Group Evolution
+        </h3>
+        <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
+          The parent group <strong>jointly produces</strong> an offspring agent group by aggregating
+          evolutionary experiences from individual agents into <strong>a shared experience pool</strong>.
+          This shared experience pool — including tool-use traces, patches, and successful strategies —
+          is then provided to each agent to guide adaptive improvements (Figure 2).<br><br>
+          Through <strong>explicit experience sharing</strong>, agents can <strong>reuse complementary discoveries
+          and continuously refine their codebases</strong> while <strong>maintaining evolutionary diversity</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Two-column layout -->
     <div class="columns is-vcentered" style="align-items: flex-start;">
 
