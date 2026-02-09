@@ -225,36 +225,128 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
       </div>
     </div>
 
-    <!-- Methodology -->
-<section class="section">
+    <!-- ===================== Methodology ===================== -->
+<section class="section" id="methodology">
   <div class="container is-max-desktop">
 
-    <div class="columns is-vcentered">
-
-      <!-- 左侧图片 -->
-      <div class="column is-half" style="text-align:center;">
-        <img 
-          src="./static/algorithm1.jpg" 
-          alt="Algorithm" 
-          style="width:100%; height:auto;"
-        />
-      </div>
-
-      <!-- 右侧文字 -->
-      <div class="column is-half">
-        <h2 class="title is-4">Algorithm</h2>
-        <p>
-          The Group-Evolving Agents algorithm maintains a shared experience
-          pool across agents. Each iteration consists of reflection,
-          evolution, and evaluation, enabling cumulative improvement
-          across generations.
+    <!-- Title -->
+    <div class="columns is-centered has-text-centered" style="margin-bottom: 1.5rem;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-bottom: 0.5rem;">Methodology</h2>
+        <p class="is-size-6" style="color: #64748b;">
+          Experience sharing and group-level evolution for open-ended self-improvement.
         </p>
       </div>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="columns is-vcentered" style="align-items: flex-start;">
+
+      <!-- Left: stacked figures -->
+      <div class="column is-half">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+          <!-- Top image -->
+          <figure class="image" style="background: #f8fafc; border-radius: 12px; padding: 12px;">
+            <img
+              src="./static/algorithm1.jpg"
+              alt="GEA algorithm"
+              style="width: 100%; height: auto; border-radius: 10px;"
+              loading="lazy"
+            />
+          </figure>
+
+          <!-- Bottom image -->
+          <figure class="image" style="background: #f8fafc; border-radius: 12px; padding: 12px;">
+            <img
+              src="./static/pipeline2.jpg"
+              alt="GEA pipeline"
+              style="width: 100%; height: auto; border-radius: 10px;"
+              loading="lazy"
+            />
+          </figure>
+
+        </div>
+      </div>
+
+      <!-- Right: two numbered blocks -->
+      <div class="column is-half">
+
+        <!-- Block 1 -->
+        <div style="margin-bottom: 1.75rem;">
+          <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <div
+              style="
+                width: 32px; height: 32px;
+                border-radius: 9999px;
+                background: #dbeafe;
+                color: #1d4ed8;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 auto;
+              ">
+              1
+            </div>
+            <div style="flex: 1;">
+              <h3 class="title is-4" style="margin-bottom: 0.5rem;">
+                Group-Level Experience Sharing
+              </h3>
+              <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
+                GEA treats a <strong>group of agents</strong> as the fundamental evolutionary unit.
+                During evolution, agents explicitly share and reuse experiences such as tool-use traces,
+                successful problem-solving strategies, and code patches. This shared experience pool
+                breaks the isolation of tree-structured evolution, enabling discoveries from one agent
+                to become reusable stepping stones for the entire group.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 2 -->
+        <div>
+          <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <div
+              style="
+                width: 32px; height: 32px;
+                border-radius: 9999px;
+                background: #ede9fe;
+                color: #6d28d9;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 auto;
+              ">
+              2
+            </div>
+            <div style="flex: 1;">
+              <h3 class="title is-4" style="margin-bottom: 0.5rem;">
+                Reflection → Evolve → Evaluate Loop
+              </h3>
+              <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
+                Each iteration follows a structured loop. Agents first <strong>reflect</strong> on the shared experience
+                to identify weaknesses and propose actionable improvements (e.g., workflow changes, tool usage,
+                prompt strategy). They then <strong>evolve</strong> by implementing concrete patches to their codebase,
+                and finally <strong>evaluate</strong> the updated agents on downstream tasks. This loop preserves
+                exploratory diversity while converting it into sustained long-term progress through explicit
+                within-group reuse.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /Right -->
 
     </div>
+    <!-- /columns -->
 
   </div>
 </section>
+<!-- ===================== /Methodology ===================== -->
+
 
 
     
