@@ -352,21 +352,21 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 <!-- </section> -->
        <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
       <div class="column is-four-fifths">
-      <h2 class="title is-3">The SafeKey Method</h2>
+      <h2 class="title is-3">Results & Analysis</h2>
       </div>
       </div>
 
  <section class="section">
   <figure class="image is-centered" style="width: 95%; margin: 0 auto 1rem;  text-align: center;">
     <img 
-      src="./static/fig2.png" 
+      src="./static/result1.png" 
       alt="image" 
       style="width: 100%; height: auto;" 
       loading="lazy" 
     />
     <figcaption style="text-align: center;">
-      Figure 2. The SafeKey framework: Dual-Path Safety Head contains two safety prediction heads H_1, H_2 that take last-layer hidden states on the early generation stage as input and predict the safety of the query. In Query-Mask Modeling, the LRM is trained to predict the key sentence K based on U with query X masked out for attention.
-      </figcaption>
+      Figure 3. Performance comparison between GEA and DGM (self-evolving baseline) on two coding benchmarks.} Under the same number of evolved agents, GEA exhibits substantially larger performance gains than DGM on both SWE-bench and Polyglot, demonstrating the improved efficiency of group-level evolution.
+    </figcaption>
   </figure>
 </section>
 
