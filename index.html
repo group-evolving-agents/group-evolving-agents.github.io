@@ -295,7 +295,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
               </h3>
               <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
                 At each iteration, <strong>GEA</strong> selects a parent group using a <strong>Performance-Novelty criterion</strong>.
-                
+                <br><br>
                 The key idea is to balance the <strong>immediate task-solving competence</strong> with <strong>long-term evolutionary diversity and potential</strong>.
               </p>
             </div>
@@ -324,17 +324,12 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
                 Stage2: Open-Ended Group Evolution
               </h3>
               <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
-                In the parent group, each agent contributes its evolutionary experience — including tool-use logs,
-                framework patches, and successful trajectories — to a shared experience pool. This pool is provided
-                as input to every agent’s reflection module, which identifies evolution needs related to workflow design,
-                tool usage, and prompting strategies. These directives are then passed to the evolution module to
-                generate framework-level patches. Finally, the updated agent is evaluated on downstream programming
-                tasks through the action module.
-                
-                Through explicit group-level experience sharing, each agent evolves by leveraging collective knowledge
-                while still adapting its own codebase. This enables agents to diverge through complementary improvements
-                while benefiting from shared discoveries, allowing the group to explore diverse evolutionary directions
-                and convert temporary exploratory diversity into sustained cumulative progress.
+                The parent group jointly produces an <strong>offspring agent group</strong> by aggregating
+                evolutionary experiences from individual agents into a shared experience pool.
+                This shared experience pool — including tool-use traces, patches, and successful strategies —
+                is then provided to each agent to guide adaptive improvements (Figure 2).
+                Through explicit experience sharing, agents can reuse complementary discoveries
+                and continuously refine their codebases while maintaining evolutionary diversity.
 
               </p>
             </div>
