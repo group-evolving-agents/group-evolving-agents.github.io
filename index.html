@@ -142,7 +142,7 @@ figcaption,
 .fig-caption,
 p[style*="font-size:14px"] {
   font-family: 'Source Serif 4', serif !important;
-  font-size: 14px;
+  font-size: 17px;
   color: #64748b !important;
 }
 
@@ -155,7 +155,7 @@ pre, code {
 figcaption,
 .fig-caption {
   font-family: 'Source Serif 4', serif !important;
-  font-size: 14px !important;
+  font-size: 17px !important;
   line-height: 1.65 !important;
   color: #64748b !important;
   margin-top: 10px !important;
@@ -716,10 +716,10 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
     <div class="columns is-variable is-5" style="margin-top: 1.5rem;">
       <div class="column is-6">
         <div style="background:#f8fafc; border-radius:12px; padding:20px 24px; height:100%;">
-          <p style="font-weight:600; color:#1e40af; font-size:16px; margin-bottom:6px;">
+          <p style="font-weight:600; color:#1e40af; font-size:18px; margin-bottom:6px;">
             GEA vs. SOTA Open-Ended Self-Improving Methods
           </p>
-          <p style="font-size:17px; color:#334155; margin:0;">
+          <p style="font-size:20px; color:#334155; margin:0;">
             GEA demonstrates substantial performance improvements over DGM (71.0% vs. 56.7% on SWE-bench Verified; 88.3% vs. 68.3% on Polyglot).
             Notably, GEA exhibits faster and more significant improvement than DGM in the <em>mid-to-late</em> evolutionary stages,
             suggesting that experience sharing unlocks compounding gains over time.
@@ -728,10 +728,10 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
       </div>
       <div class="column is-6">
         <div style="background:#f8fafc; border-radius:12px; padding:20px 24px; height:100%;">
-          <p style="font-weight:600; color:#6d28d9; font-size:16px; margin-bottom:6px;">
+          <p style="font-weight:600; color:#6d28d9; font-size:18px; margin-bottom:6px;">
             GEA vs. SOTA Human-Designed Coding Agents
           </p>
-          <p style="font-size:17px; color:#334155; margin:0;">
+          <p style="font-size:20px; color:#334155; margin:0;">
             Using meta-learning <em>without any human intervention</em>, GEA automatically evolves agent frameworks
             that match or surpass carefully engineered human designs (71.0% vs. 71.8% on SWE-bench; 88.3% vs. 52.0% on Polyglot).
           </p>
@@ -758,7 +758,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/result2.png" alt="Result figure" style="width:100%; height:auto;">
         </figure>
-        <p style="margin-top:8px; font-size:14px; color:#64748b;">
+        <p style="margin-top:8px; font-size:17px; color:#64748b;">
           <strong>Figure 4.</strong> Evolution analysis of tool discovery and integration over iterations.
           Each row (T1–T9) corresponds to a key tool-level functionality.
           <span style="color:#3b82f6;">●</span> Blue = discovered but not yet integrated;
@@ -769,7 +769,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/table1.jpg" alt="Table results" style="width:100%; height:auto;">
         </figure>
-        <p style="margin-top:8px; font-size:14px; color:#64748b;">
+        <p style="margin-top:8px; font-size:17px; color:#64748b;">
           <strong>Table 1.</strong> Comparison of performance (Success Rate) and ancestor integration across the Top-<em>k</em> agents on SWE-bench Verified.
           Performance is reported as the <em>worst-case (minimum) success rate</em> among the top-<em>k</em> agents.
           <em>Ancestor Count</em> denotes the count of unique historical agents integrated into the solution.
@@ -832,7 +832,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/robustness.png" alt="Robustness comparison" style="width:100%; height:auto;">
         </figure>
-        <p style="margin-top:8px; font-size:14px; color:#64748b;">
+        <p style="margin-top:8px; font-size:17px; color:#64748b;">
           <strong>Figure 5.</strong> Robustness test comparing GEA vs. self-evolution under injected framework-level bugs.
         </p>
       </div>
@@ -840,7 +840,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/robustness2.png" alt="Robustness table" style="width:100%; height:auto;">
         </figure>
-        <p style="margin-top:8px; font-size:14px; color:#64748b;">
+        <p style="margin-top:8px; font-size:17px; color:#64748b;">
           <strong>Table 2.</strong> Robustness to framework-level bugs. Number of evolution iterations required to repair injected bugs
           across five independent trials (E1–E5). GEA repairs bugs in <strong>1.4 iterations</strong> on average vs. <strong>5 iterations</strong> for DGM.
         </p>
