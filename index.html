@@ -170,7 +170,23 @@ figcaption strong, .fig-caption strong { color: #334155 !important; }
   border-radius: 12px;
 }
 
-/* ── ① Hero key contributions ── */
+/* ── Hero gradient background ── */
+.hero.has-gradient-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 40%, #dbeafe 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 85% 20%, #ede9fe 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 60% 90%, #ccfbf1 0%, transparent 50%),
+    #f8fafc;
+}
+/* Soften the transition to the next section */
+.hero-bottom-fade {
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  margin-top: -48px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
 .hero-contributions {
   max-width: 760px;
   margin: 2rem auto 0;
@@ -178,6 +194,13 @@ figcaption strong, .fig-caption strong { color: #334155 !important; }
   flex-direction: column;
   gap: 0;
   text-align: left;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 18px;
+  padding: 6px 24px;
+  box-shadow: 0 2px 20px rgba(15,23,42,0.06);
 }
 .hero-contrib-item {
   display: flex;
@@ -310,8 +333,8 @@ figcaption strong, .fig-caption strong { color: #334155 !important; }
 </nav>
 
 
-<section class="hero">
-  <div class="hero-body">
+<section class="hero has-gradient-bg">
+  <div class="hero-body" style="padding-bottom: 3.5rem;">
     <div class="container is-max-widescreen">
       <div class="columns is-centered">
         <div class="column has-text-centered">
@@ -410,6 +433,7 @@ figcaption strong, .fig-caption strong { color: #334155 !important; }
     </div>
   </div>
 </section>
+<div class="hero-bottom-fade"></div>
 
 <section class="section">
   <figure class="image is-centered" style="width: 70%; margin: 0 auto 1rem; text-align: center;">
