@@ -76,7 +76,16 @@ figcaption {
 
 <!-- ✅ 唯一改动：把你原来的“正文Source Serif + 标题/按钮Inter”改为“全站统一Source Serif” -->
 <style>
-  
+.section-title {
+  text-align: left;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
 /* widen page */
 .container.is-max-widescreen {
   max-width: 1400px !important;
@@ -278,7 +287,7 @@ pre, code {
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="section-title">Abstract</h2>
         <div class="content has-text-justified">
           <p>
 Open-ended self-improving agents can autonomously modify their own structural designs to advance their capabilities and overcome the limits of pre-defined architectures, thus reducing reliance on human intervention. We introduce <strong>Group-Evolving Agents (GEA)</strong>, a new paradigm for open-ended self-improvement that treats a group of agents as the fundamental evolutionary unit, enabling explicit experience sharing and reuse within the group throughout evolution. Unlike existing self-evolving paradigms that adopt tree-structured evolution, GEA overcomes the inefficient utilization of exploratory diversity caused by isolated evolutionary branches.
@@ -409,7 +418,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 <!-- </section> -->
        <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
       <div class="column is-four-fifths">
-      <h2 class="title is-3">Results & Analysis</h2>
+      <h2 class="section-title">Results & Analysis</h2>
       </div>
       </div>
 
