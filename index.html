@@ -661,5 +661,98 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
   </div>
 </footer>
 
+
+<!-- ===================== Results & Analysis ===================== -->
+<section class="section" id="results">
+  <div class="container is-max-widescreen">
+
+    <h2 class="section-title">Results & Analysis</h2>
+
+    <!-- Tabs navigation -->
+    <div class="tabs is-centered is-boxed is-medium" style="margin-bottom: 1.5rem;">
+      <ul>
+        <li class="is-active"><a href="#results-overall">Overall Performance</a></li>
+        <li><a href="#results-evolution">Evolution Analysis</a></li>
+        <li><a href="#results-transfer">Transferability</a></li>
+        <li><a href="#results-robustness">Robustness</a></li>
+      </ul>
+    </div>
+
+    <!-- Overall Performance -->
+    <div id="results-overall" style="margin-bottom: 3rem;">
+      <h3 class="title is-4">Overall performance</h3>
+
+      <figure class="image" style="width: 95%; margin: 0 auto 1rem;">
+        <img src="./static/result1.png" alt="Performance comparison">
+        <figcaption style="text-align: center; font-size: 14px; color:#64748b;">
+          Figure 3. Performance comparison between GEA and DGM on SWE-bench and Polyglot.
+        </figcaption>
+      </figure>
+
+      <div class="content">
+        <ul>
+          <li><strong>GEA vs open-ended self-improving baseline:</strong> GEA achieves substantially stronger performance than DGM.</li>
+          <li><strong>Faster improvement:</strong> GEA improves more rapidly in mid-to-late evolution stages.</li>
+          <li><strong>GEA vs human-designed agents:</strong> GEA automatically evolves competitive or superior frameworks without human engineering.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Evolution Analysis -->
+    <div id="results-evolution" style="margin-bottom: 3rem;">
+      <h3 class="title is-4">Evolution analysis</h3>
+
+      <div class="columns is-variable is-6 is-centered">
+
+        <div class="column is-6 has-text-centered">
+          <img src="./static/result2.png" alt="Evolution analysis">
+        </div>
+
+        <div class="column is-6 has-text-centered">
+          <img src="./static/table1.jpg" alt="Table results">
+        </div>
+
+      </div>
+
+      <p class="content">
+        Experience sharing enables discovery and integration of useful tools over evolution.
+      </p>
+    </div>
+
+    <!-- Transferability -->
+    <div id="results-transfer" style="margin-bottom: 3rem;">
+      <h3 class="title is-4">Transferability</h3>
+
+      <img src="./static/tranfer_1.jpg" alt="Transferability">
+
+      <p class="content">
+        Improvements discovered by GEA generalize across foundation models.
+      </p>
+    </div>
+
+    <!-- Robustness -->
+    <div id="results-robustness" style="margin-bottom: 3rem;">
+      <h3 class="title is-4">Robustness</h3>
+
+      <div class="columns is-centered">
+
+        <div class="column is-8">
+          <img src="./static/robustness.png">
+        </div>
+
+        <div class="column is-4">
+          <img src="./static/robustness2.png">
+        </div>
+
+      </div>
+
+      <p class="content">
+        Experience sharing improves robustness and accelerates bug recovery.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 </body>
 </html>
