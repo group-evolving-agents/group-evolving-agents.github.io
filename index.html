@@ -447,7 +447,8 @@ figcaption strong, .fig-caption strong { color: #111827 !important; }
 
 
     <figcaption style="text-align: center;">
-      Figure 1. Overview of the Group-Evolving Agents (GEA) pipeline.
+      <strong>Overview of Group-Evolving Agents (GEA) vs. tree-structured self-evolution for open-endedness.</strong>
+      GEA treats a <em>group of agents</em>, rather than an individual agent, as the fundamental unit of evolution. At each iteration, a parent group jointly gives rise to an offspring group through explicit intra-group Experience sharing and reuse.
     </figcaption>
 
   </figure>
@@ -827,7 +828,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
     <h3 class="results-sub-title">④ Robustness</h3>
 
     <div class="columns is-variable is-6 is-centered" style="margin-top:1rem;">
-      <div class="column is-8 has-text-centered">
+      <div class="column is-6 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/robustness.png" alt="Robustness comparison" style="width:100%; height:auto;">
         </figure>
@@ -835,7 +836,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
           <strong>Figure 5.</strong> Robustness test comparing GEA vs. self-evolution under injected framework-level bugs.
         </p>
       </div>
-      <div class="column is-4 has-text-centered">
+      <div class="column is-6 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/robustness2.png" alt="Robustness table" style="width:100%; height:auto;">
         </figure>
