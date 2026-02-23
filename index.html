@@ -3,28 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="Group-Evolving Agents project page.">
+  <meta name="keywords" content="GEA, Agents, Evolution, LLM Agents">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet"> -->
-
+  <!-- Bulma and styles -->
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -32,610 +26,232 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+
   <link rel="icon" href="./static/logo.svg">
 
-  <!-- Modern project-page fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Main body font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- <style>
-body {
-  font-family: 'Inter', sans-serif;
-  color: #0f172a;
-}
+  <!-- Optional UI font (for small captions only) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-/* Title */
-.publication-title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
+  <!-- ===== Global typography ===== -->
+  <style>
 
-/* Authors */
-.publication-authors {
-  font-family: 'Inter', sans-serif;
-}
+  /* ===== GLOBAL: use Source Serif everywhere ===== */
+  html, body {
+    font-family: 'Source Serif 4', serif !important;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #334155;
+  }
 
-/* Abstract / paragraph text */
-.content p {
-  font-family: 'Source Serif 4', serif;
-  font-size: 18px;
-  line-height: 1.75;
-  color: #334155;
-}
+  /* Force override Bulma titles */
+  .title,
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Serif 4', serif !important;
+    font-weight: 600;
+    color: #0f172a;
+  }
 
-/* Figure captions */
-figcaption {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  color: #64748b;
-}
-</style> -->
-<style>
-/* ===== Global body text (main content) ===== */
-body {
-  font-family: 'Source Serif 4', serif;
-  font-size: 18px;
-  line-height: 1.75;
-  color: #334155;
-}
+  /* Authors */
+  .publication-authors,
+  .author-block {
+    font-family: 'Source Serif 4', serif !important;
+  }
 
-/* ===== Titles / UI / metadata stay modern (Inter) ===== */
-.title,
-.publication-title,
-.publication-authors,
-.author-block,
-.button,
-.navbar,
-figcaption,
-.caption,
-.is-size-6,
-.is-size-5 {
-  font-family: 'Inter', sans-serif;
-}
+  /* Abstract, paragraphs */
+  p,
+  .content p {
+    font-family: 'Source Serif 4', serif !important;
+    font-size: 18px;
+    line-height: 1.75;
+  }
 
-/* Title styling */
-.publication-title {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: #0f172a;
-}
+  /* Buttons also use same font */
+  .button {
+    font-family: 'Source Serif 4', serif !important;
+  }
 
-/* Make sure headings look dark */
-h1, h2, h3, h4, h5, h6 {
-  color: #0f172a;
-}
+  /* BibTeX block */
+  pre, code {
+    font-family: 'Source Serif 4', serif !important;
+  }
 
-/* Paragraphs inside .content keep the same global style (optional but fine) */
-.content p {
-  font-family: 'Source Serif 4', serif;
-  font-size: 18px;
-  line-height: 1.75;
-  color: #334155;
-}
+  /* Optional: captions can stay cleaner */
+  figcaption {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #64748b;
+  }
 
-/* Figure captions */
-figcaption,
-p[style*="font-size:14px"] {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  color: #64748b;
-}
-</style>
-  
+  </style>
+
+  <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
 </head>
+
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a> -->
 
-<!--       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div> -->
-    </div>
-
-  </div>
-</nav>
-
+<!-- ================= HERO ================= -->
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-widescreen">
+
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing
-</h1>
+
+          <h1 class="title is-1 publication-title">
+            Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing
+          </h1>
+
           <div class="is-size-5 publication-authors">
+
             <span class="author-block">
-              <a href="https://zhaotianweng.github.io/">Zhaotian Weng</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://a-antoniades.github.io/">Antonis Antoniades</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://dnathani.net"> Deepak Nathani</a><sup>1</sup>,
+              <a href="https://zhaotianweng.github.io/">Zhaotian Weng</a><sup>1</sup>,
             </span>
+
+            <span class="author-block">
+              Antonis Antoniades<sup>1</sup>,
+            </span>
+
+            <span class="author-block">
+              Deepak Nathani<sup>1</sup>,
+            </span>
+
             <span class="author-block">
               Zhen Zhang,
             </span>
+
             <span class="author-block">
               Xiao Pu,
             </span>
+
             <span class="author-block">
-              <a href="https://eric-xw.github.io/">Xin Eric Wang</a><sup>1</sup>,
+              Xin Eric Wang<sup>1</sup>
             </span>
-       
+
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>UC Santa Barbara,</span>
+            <span class="author-block"><sup>1</sup>UC Santa Barbara</span>
           </div>
 
+
+          <!-- Links -->
+
           <div class="column has-text-centered">
+
             <div class="publication-links">
-              <!-- PDF Link. -->
+
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2602.04837"
                    class="external-link button is-normal is-rounded is-dark">
+
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                    <i class="fas fa-file-pdf"></i>
                   </span>
+
                   <span>Paper</span>
+
                 </a>
               </span>
-              <!-- Code Link. -->
+
+
               <span class="link-block">
-                <a href="https://github.com/eric-ai-lab/SafeKey/"
+                <a href="https://github.com/eric-ai-lab/GEA"
                    class="external-link button is-normal is-rounded is-dark">
+
                   <span class="icon">
-                      <i class="fab fa-github"></i>
+                    <i class="fab fa-github"></i>
                   </span>
+
                   <span>Code</span>
-                  </a>
+
+                </a>
               </span>
-              <!-- Model Link. -->
-              
+
+
             </div>
 
           </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
+
+
+<!-- ================= ABSTRACT ================= -->
 
 <section class="section">
-  <figure class="image is-centered" style="width: 70%; margin: 0 auto 1rem; text-align: center;">
-    
-    <img 
-  src="./static/pipeline_overall.png" 
-  alt="GEA pipeline" 
-  style="width: 100%; height: auto;" 
-  loading="lazy"
-    />
 
+<div class="container is-max-widescreen">
 
-    <figcaption style="text-align: center;">
-      Figure 1. Overview of the Group-Evolving Agents (GEA) pipeline.
-    </figcaption>
+<div class="columns is-centered">
 
-  </figure>
-</section>
+<div class="column is-four-fifths">
 
+<h2 class="title is-3">Abstract</h2>
 
-  <div class="container is-max-widescreen">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-Open-ended self-improving agents can autonomously modify their own structural designs to advance their capabilities and overcome the limits of pre-defined architectures, thus reducing reliance on human intervention. We introduce <strong>Group-Evolving Agents (GEA)</strong>, a new paradigm for open-ended self-improvement that treats a group of agents as the fundamental evolutionary unit, enabling explicit experience sharing and reuse within the group throughout evolution. Unlike existing self-evolving paradigms that adopt tree-structured evolution, GEA overcomes the inefficient utilization of exploratory diversity caused by isolated evolutionary branches.
+<div class="content has-text-justified">
 
-We evaluate GEA on challenging coding benchmarks, where it significantly outperforms state-of-the-art self-evolving methods (71.0% vs. 56.7% on SWE-bench Verified, 88.3% vs. 68.3% on Polyglot) and matches or exceeds top human-designed agent frameworks (71.8% and 52.0% on the two benchmarks, respectively). Analysis reveals that GEA more effectively converts early-stage exploratory diversity into sustained long-term progress, achieving stronger performance under the same number of evolved agents. Furthermore, GEA exhibits consistent transferability across different coding models and greater robustness, fixing framework-level bugs in 1.4 iterations on average, compared to 5 iterations for self-evolving methods.
-          </p>
-        </div>
-      </div>
-    </div>
+<p>
 
-    <!-- ===================== Methodology ===================== -->
-<section class="section" id="methodology">
-  <div class="container is-max-widescreen">
+Open-ended self-improving agents can autonomously modify their own structural designs to advance their capabilities and overcome the limits of pre-defined architectures, thus reducing reliance on human intervention.
 
-    <!-- Title -->
-    <div class="columns is-centered has-text-centered" style="margin-bottom: 1.5rem;">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3" style="margin-bottom: 0.5rem;">Methodology</h2>
-        <p class="is-size-6" style="color: #64748b;">
-          Parent Group Selection + Open-Ended Group Evolution
-        </p>
-      </div>
-    </div>
+We introduce <strong>Group-Evolving Agents (GEA)</strong>, a new paradigm for open-ended self-improvement that treats a group of agents as the fundamental evolutionary unit, enabling explicit experience sharing and reuse.
 
+We evaluate GEA on challenging coding benchmarks, where it significantly outperforms prior methods and demonstrates strong robustness and transferability.
 
-    <!-- Row 1: top image + Stage1 -->
-<div class="columns is-vcentered" style="align-items: flex-start; margin-bottom: 1rem;">
+</p>
 
-  <!-- Left: Top image -->
-  <div class="column is-half">
-    <figure class="image" style="background: #f8fafc; border-radius: 12px; padding: 12px;">
-      <img
-        src="./static/algorithm1.jpg"
-        alt="GEA algorithm"
-        style="width: 100%; height: auto; border-radius: 10px;"
-        loading="lazy"
-      />
-    </figure>
-  </div>
-
-  <!-- Right: Block 1 -->
-  <div class="column is-half">
-    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
-      <div
-        style="
-          width: 32px; height: 32px;
-          border-radius: 9999px;
-          background: #dbeafe;
-          color: #1d4ed8;
-          font-weight: 700;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex: 0 0 auto;
-        ">
-        1
-      </div>
-      <div style="flex: 1;">
-        <h3 class="title is-4" style="margin-bottom: 0.5rem;">
-          Stage1: Parent Group Selection
-        </h3>
-        <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
-          At each iteration, <strong>GEA</strong> selects a parent group using a <strong>Performance-Novelty criterion</strong>.
-          <br><br>
-          The key idea is to balance the <strong>immediate task-solving competence</strong> with <strong>long-term evolutionary diversity and potential</strong>.
-        </p>
-      </div>
-    </div>
-  </div>
 </div>
 
-<!-- Row 2: bottom image + Stage2 -->
-<div class="columns is-vcentered" style="align-items: flex-start;">
+</div>
+</div>
+</div>
+</section>
 
-  <!-- Left: Bottom image -->
-  <div class="column is-half">
-    <figure class="image" style="background: #f8fafc; border-radius: 12px; padding: 12px;">
-      <img
-        src="./static/pipeline2.jpg"
-        alt="GEA pipeline"
-        style="width: 100%; height: auto; border-radius: 10px;"
-        loading="lazy"
-      />
-    </figure>
-  </div>
 
-  <!-- Right: Block 2 -->
-  <div class="column is-half">
-    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
-      <div
-        style="
-          width: 32px; height: 32px;
-          border-radius: 9999px;
-          background: #ede9fe;
-          color: #6d28d9;
-          font-weight: 700;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex: 0 0 auto;
-        ">
-        2
-      </div>
-      <div style="flex: 1;">
-        <h3 class="title is-4" style="margin-bottom: 0.5rem;">
-          Stage2: Open-Ended Group Evolution
-        </h3>
-        <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
-          The parent group <strong>jointly produces</strong> an offspring agent group by aggregating
-          evolutionary experiences from individual agents into <strong>a shared experience pool</strong>.
-          This shared experience pool — including tool-use traces, patches, and successful strategies —
-          is then provided to each agent to guide adaptive improvements (Figure 2).<br><br>
-          Through <strong>explicit experience sharing</strong>, agents can <strong>reuse complementary discoveries
-          and continuously refine their codebases</strong> while <strong>maintaining evolutionary diversity</strong>.
-        </p>
-      </div>
-    </div>
-  </div>
+
+<!-- ================= BibTeX ================= -->
+
+<section class="section" id="BibTeX">
+
+<div class="container content" style="max-width:800px;margin:0 auto;">
+
+<h2 class="title">BibTeX</h2>
+
+<pre><code>@misc{weng2026groupevolvingagentsopenendedselfimprovement,
+title={Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing},
+author={Zhaotian Weng and Antonis Antoniades and Deepak Nathani and Zhen Zhang and Xiao Pu and Xin Eric Wang},
+year={2026},
+eprint={2602.04837},
+archivePrefix={arXiv},
+primaryClass={cs.AI},
+url={https://arxiv.org/abs/2602.04837}
+}</code></pre>
+
 </div>
 
-    
-</section>
-<!-- ===================== /Methodology ===================== -->
-
-
-
-    
-<!-- </section> -->
-       <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
-      <div class="column is-four-fifths">
-      <h2 class="title is-3">Results & Analysis</h2>
-      </div>
-      </div>
-
- <section class="section">
-  <figure class="image is-centered" style="width: 95%; margin: 0 auto 1rem;  text-align: center;">
-    <img 
-      src="./static/result1.png" 
-      alt="image" 
-      style="width: 100%; height: auto;" 
-      loading="lazy" 
-    />
-    <figcaption style="text-align: center;">
-      Figure 3. Performance comparison between GEA and DGM (self-evolving baseline) on two coding benchmarks.} Under the same number of evolved agents, GEA exhibits substantially larger performance gains than DGM on both SWE-bench and Polyglot, demonstrating the improved efficiency of group-level evolution.
-    </figcaption>
-  </figure>
-   1.GEA v.s. SOTA open-ended self-improving method
-   GEA demonstrates subtantial performance improvements over DGM.</br>
-   Interesting observation: GEA exhibits faster and more significant improvement than DGM in the mid-late stages. </br>
-   2.GEA v.s. SOTA human-designed coding agents
-   Using meta-learning without any human intervention, GEA automatically evolves agent frameworks that match or surpass carefully engineered human designs.
-</section>
-
-<section class="section" style="margin-top: -1rem;">
-  <div class="container is-max-widescreen">
-    <div class="columns is-variable is-6 is-centered">
-
-      <!-- Left image -->
-      <div class="column is-6 has-text-centered">
-        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/result2.png" alt="Result figure" style="width:100%; height:auto;">
-        </figure>
-        <p style="margin-top:8px; font-size:14px; color:#64748b;">
-          Figure 4. <strong>Evolution analysis of tool discovery and integration over iterations.</strong>
-  Each row (T1--T9) corresponds to a key tool-level functionality.
-  Blue markers indicate tools that have been discovered but not yet integrated into the current best agent,
-  while red markers indicate tools integrated into the best-performing agent.
-        </p>
-      </div>
-
-      <!-- Right image -->
-      <div class="column is-6 has-text-centered">
-        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/table1.jpg" alt="Table results" style="width:100%; height:auto;">
-        </figure>
-        <p style="margin-top:8px; font-size:14px; color:#64748b;">
-          <strong>Table 1.</strong> Comparison of performance (Success Rate) and ancestor integration across the Top-k agents on SWE-bench Verified.
-            Performance is reported as the <em>worst-case (minimum) success rate</em> among the top-k agents.
-            <em>Ancestor Count</em> denotes the count of unique historical agents integrated into the solution.
-            Notably, the worst-case performance of GEA's top-5 agents (58.3%) exceeds the single best agent from DGM (56.7%).
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== Transferability ===================== -->
-<section class="section" style="margin-top: 0rem;">
-  <div class="container is-max-widescreen">
-
-    <!-- Full-width image -->
-    <div class="columns is-centered">
-      <div class="column is-12 has-text-centered">
-        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/tranfer_1.jpg" alt="Transferability figure 1" style="width:100%; height:auto;">
-        </figure>
-      </div>
-    </div>
-
-    <!-- Two half-width images side-by-side -->
-    <div class="columns is-variable is-6 is-centered" style="margin-top: 0.75rem;">
-
-      <div class="column is-6 has-text-centered">
-        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/transfer2.jpg" alt="Transferability figure 2" style="width:100%; height:auto;">
-        </figure>
-      </div>
-
-      <div class="column is-6 has-text-centered">
-        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/transfer3.jpg" alt="Transferability figure 3" style="width:100%; height:auto;">
-        </figure>
-      </div>
-
-    </div>
-
-    <!-- Take-away text -->
-    <div class="content" style="margin-top: 0.75rem;">
-      <p style="font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.75; color: #334155;">
-        <strong>Take-away:</strong> GEA discovers model-agnostic agent-level improvements that generalize across different foundation models.
-      </p>
-    </div>
-
-  </div>
-</section>
-<!-- ===================== /Transferability ===================== -->
-
-
-<!-- ===================== Robustness ===================== -->
-<section class="section" style="margin-top: 1rem;">
-  <div class="container is-max-widescreen">
-
-    <div class="columns is-variable is-6 is-centered">
-
-      <!-- Left: 0.7 width -->
-      <div class="column is-8 has-text-centered">
-        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/robustness.png"
-               alt="Robustness comparison"
-               style="width:100%; height:auto;">
-        </figure>
-        <p style="margin-top:8px; font-size:14px; color:#64748b;">
-          <strong>Figure.</strong> Compare two settings (GEA v.s. Self-evolution), robustness test.
-        </p>
-      </div>
-
-      <!-- Right: 0.3 width -->
-      <div class="column is-4 has-text-centered">
-        <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/robustness2.png"
-               alt="Robustness table"
-               style="width:100%; height:auto;">
-        </figure>
-        <p style="margin-top:8px; font-size:14px; color:#64748b;">
-          <strong>Table 2.</strong> Robustness to framework-level bugs. We report the number of evolution
-          iterations required to repair injected bugs across five independent trials (E1–E5).
-          Each entry denotes the number of iterations needed for the agent to successfully repair
-          the injected framework-level bug in a given trial. Lower means that GEA repairs bugs
-          significantly faster than DGM.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Take-away -->
-    <div class="content" style="margin-top: 0.75rem;">
-      <p style="font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.75; color: #334155;">
-        <strong>Take-away:</strong> Experience sharing enables stronger robustness.
-      </p>
-    </div>
-
-  </div>
-</section>
-<!-- ===================== /Robustness ===================== -->
-
-<!-- 固定布局的 BibTeX 部分 -->
-<section class="section" id="BibTeX">
-  <div class="container content" style="max-width: 800px; margin: 0 auto;">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{weng2026groupevolvingagentsopenendedselfimprovement,
-      title={Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing}, 
-      author={Zhaotian Weng and Antonis Antoniades and Deepak Nathani and Zhen Zhang and Xiao Pu and Xin Eric Wang},
-      year={2026},
-      eprint={2602.04837},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2602.04837}, 
-}</code></pre>
-  </div>
 </section>
 
 
-
-<!-- <section class="section">
-  <div class="columns is-centered" style="margin-bottom: 10rem;">
-    <!-- 左侧图片 -->
-<!--     <div class="column is-half" style="text-align: center;">
-      <figure class="image">
-        <img 
-          src="./static/agent_chat.png" 
-          srcset="./static/agent_chat-small.png 600w, ./static/agent_chat-medium.png 1200w, ./static/agent_chat-large.png 2000w" 
-          sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 100vw"
-          alt="image" 
-          style="width: 100%; height: auto;" 
-          loading="lazy"
-        />
-    </div> -->
-    
- 
-<!--     <div class="column is-half" style="text-align: center;">
-      <figure class="image">
-        <img 
-          src="./static/agent_embodied.png" 
-          srcset="./static/agent_embodied-small.png 600w, ./static/agent_embodied-medium.png 1200w, ./static/agent_embodied-large.png 2000w" 
-          sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 100vw"
-          alt="image" 
-          style="width: 100%; height: auto;" 
-          loading="lazy"
-        />
-    </div>
-  </div>
-  <figcaption style="text-align: center;">
-    MLLM's performance on our benchmark with three reasoning settings. Base setting: without explicit safety reasoning. 1 step CoT: MLLMs reasoning the safety of user query and generating response at one step. Multi-agent: our designed multi-agent pipeline. The results show that the multi-agent pipeline improves performance in most cases.
-  </figcaption>
-  </figure>
-  </div>
-</section> 
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-widescreen content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>
