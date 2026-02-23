@@ -62,7 +62,7 @@ body {
 .content p {
   font-family: 'Source Serif 4', serif;
   font-size: 18px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: #334155;
 }
 
@@ -132,8 +132,9 @@ h1, h2, h3, h4, h5, h6,
 p,
 .content p {
   font-family: 'Source Serif 4', serif !important;
-  font-size: 18px;
-  line-height: 1.75;
+  font-size: 20px;
+  line-height: 1.8;
+  line-height: 1.8;
   color: #334155;
 }
 
@@ -282,23 +283,21 @@ pre, code {
   </figure>
 </section>
 
-
+<section class="section" id="abstract">
   <div class="container is-max-widescreen">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="section-title">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
+    <h2 class="section-title">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
 Open-ended self-improving agents can autonomously modify their own structural designs to advance their capabilities and overcome the limits of pre-defined architectures, thus reducing reliance on human intervention. We introduce <strong>Group-Evolving Agents (GEA)</strong>, a new paradigm for open-ended self-improvement that treats a group of agents as the fundamental evolutionary unit, enabling explicit experience sharing and reuse within the group throughout evolution. Unlike existing self-evolving paradigms that adopt tree-structured evolution, GEA overcomes the inefficient utilization of exploratory diversity caused by isolated evolutionary branches.
 
 We evaluate GEA on challenging coding benchmarks, where it significantly outperforms state-of-the-art self-evolving methods (71.0% vs. 56.7% on SWE-bench Verified, 88.3% vs. 68.3% on Polyglot) and matches or exceeds top human-designed agent frameworks (71.8% and 52.0% on the two benchmarks, respectively). Analysis reveals that GEA more effectively converts early-stage exploratory diversity into sustained long-term progress, achieving stronger performance under the same number of evolved agents. Furthermore, GEA exhibits consistent transferability across different coding models and greater robustness, fixing framework-level bugs in 1.4 iterations on average, compared to 5 iterations for self-evolving methods.
           </p>
-        </div>
-      </div>
     </div>
+  </div>
+</section>
 
-    <!-- ===================== Methodology ===================== -->
+<!-- ===================== Methodology ===================== -->
+
 <section class="section" id="methodology">
   <div class="container is-max-widescreen">
 
@@ -347,7 +346,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
         <h3 class="title is-4" style="margin-bottom: 0.5rem;">
           Stage1: Parent Group Selection
         </h3>
-        <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
+        <p style="color: #475569; line-height: 1.8; font-size: 1.05rem;">
           At each iteration, <strong>GEA</strong> selects a parent group using a <strong>Performance-Novelty criterion</strong>.
           <br><br>
           The key idea is to balance the <strong>immediate task-solving competence</strong> with <strong>long-term evolutionary diversity and potential</strong>.
@@ -393,7 +392,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
         <h3 class="title is-4" style="margin-bottom: 0.5rem;">
           Stage2: Open-Ended Group Evolution
         </h3>
-        <p style="color: #475569; line-height: 1.75; font-size: 1.05rem;">
+        <p style="color: #475569; line-height: 1.8; font-size: 1.05rem;">
           The parent group <strong>jointly produces</strong> an offspring agent group by aggregating
           evolutionary experiences from individual agents into <strong>a shared experience pool</strong>.
           This shared experience pool — including tool-use traces, patches, and successful strategies —
@@ -414,14 +413,12 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 
     
 <!-- </section> -->
-       <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
-      <div class="column is-four-fifths">
-      <h2 class="section-title">Results & Analysis</h2>
-      </div>
-      </div>
 
- <section class="section">
-  <figure class="image is-centered" style="width: 95%; margin: 0 auto 1rem;  text-align: center;">
+<section class="section" id="results">
+  <div class="container is-max-widescreen">
+    <h2 class="section-title">Results & Analysis</h2>
+
+    <figure class="image is-centered" style="width: 95%; margin: 0 auto 1rem;  text-align: center;">
     <img 
       src="./static/result1.png" 
       alt="image" 
@@ -437,7 +434,10 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
    Interesting observation: GEA exhibits faster and more significant improvement than DGM in the mid-late stages. </br>
    2.GEA v.s. SOTA human-designed coding agents
    Using meta-learning without any human intervention, GEA automatically evolves agent frameworks that match or surpass carefully engineered human designs.
+
+  </div>
 </section>
+
 
 <section class="section" style="margin-top: -1rem;">
   <div class="container is-max-widescreen">
@@ -505,7 +505,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 
     <!-- Take-away text -->
     <div class="content" style="margin-top: 0.75rem;">
-      <p style="font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.75; color: #334155;">
+      <p style="font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.8; color: #334155;">
         <strong>Take-away:</strong> GEA discovers model-agnostic agent-level improvements that generalize across different foundation models.
       </p>
     </div>
@@ -553,7 +553,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 
     <!-- Take-away -->
     <div class="content" style="margin-top: 0.75rem;">
-      <p style="font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.75; color: #334155;">
+      <p style="font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.8; color: #334155;">
         <strong>Take-away:</strong> Experience sharing enables stronger robustness.
       </p>
     </div>
@@ -564,8 +564,8 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 
 <!-- 固定布局的 BibTeX 部分 -->
 <section class="section" id="BibTeX">
-  <div class="container content" style="max-width: 800px; margin: 0 auto;">
-    <h2 class="title">BibTeX</h2>
+  <div class="container is-max-widescreen content">
+    <h2 class="section-title">BibTeX</h2>
     <pre><code>@misc{weng2026groupevolvingagentsopenendedselfimprovement,
       title={Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing}, 
       author={Zhaotian Weng and Antonis Antoniades and Deepak Nathani and Zhen Zhang and Xiao Pu and Xin Eric Wang},
