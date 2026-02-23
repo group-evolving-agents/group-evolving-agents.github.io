@@ -412,73 +412,230 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 
 
     
-<!-- </section> -->
+<!-- ===================== Results & Analysis (with sub-sections + tab nav) ===================== -->
 
-<section class="section" id="results">
+<style>
+/* ── Results tab nav ── */
+#results-tab-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0;
+}
+#results-tab-nav .tab-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.res-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 18px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #64748b;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.res-tab-btn .tab-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #64748b;
+  transition: background 0.2s, color 0.2s;
+}
+.res-tab-btn:hover { color: #0f172a; }
+.res-tab-btn.is-active {
+  color: #1d4ed8;
+  border-bottom-color: #1d4ed8;
+}
+.res-tab-btn.is-active .tab-num {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* ── Sub-section heading style ── */
+.results-sub-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 6px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  letter-spacing: -0.01em;
+}
+
+/* ── Takeaway callout ── */
+.takeaway-box {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #f0f9ff;
+  border-left: 4px solid #38bdf8;
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin-top: 1.25rem;
+}
+.takeaway-box .ta-label {
+  font-weight: 700;
+  color: #0369a1;
+  white-space: nowrap;
+}
+.takeaway-box p {
+  font-size: 17px !important;
+  color: #0c4a6e !important;
+  margin: 0 !important;
+}
+
+/* ── Section divider ── */
+.results-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #cbd5e1 30%, #cbd5e1 70%, transparent);
+  margin: 0;
+}
+</style>
+
+<!-- Big section title (not sticky) -->
+<section class="section" id="results" style="padding-bottom: 0;">
   <div class="container is-max-widescreen">
-    <h2 class="section-title">Results & Analysis</h2>
-
-    <figure class="image is-centered" style="width: 95%; margin: 0 auto 1rem;  text-align: center;">
-    <img 
-      src="./static/result1.png" 
-      alt="image" 
-      style="width: 100%; height: auto;" 
-      loading="lazy" 
-    />
-    <figcaption style="text-align: center;">
-      Figure 3. Performance comparison between GEA and DGM (self-evolving baseline) on two coding benchmarks.} Under the same number of evolved agents, GEA exhibits substantially larger performance gains than DGM on both SWE-bench and Polyglot, demonstrating the improved efficiency of group-level evolution.
-    </figcaption>
-  </figure>
-   1.GEA v.s. SOTA open-ended self-improving method
-   GEA demonstrates subtantial performance improvements over DGM.</br>
-   Interesting observation: GEA exhibits faster and more significant improvement than DGM in the mid-late stages. </br>
-   2.GEA v.s. SOTA human-designed coding agents
-   Using meta-learning without any human intervention, GEA automatically evolves agent frameworks that match or surpass carefully engineered human designs.
-
+    <h2 class="section-title">Results &amp; Analysis</h2>
+    <p style="color:#64748b; font-size:17px; margin-top:-8px; margin-bottom:0;">
+      Four complementary analyses evaluating GEA's performance, interpretability, transferability, and robustness.
+    </p>
   </div>
 </section>
 
+<!-- Sticky Tab Nav -->
+<div id="results-tab-nav">
+  <div class="tab-inner">
+    <button class="res-tab-btn is-active" data-target="res-overall">
+      <span class="tab-num">1</span> Overall Performance
+    </button>
+    <button class="res-tab-btn" data-target="res-evolution">
+      <span class="tab-num">2</span> Evolution Analysis
+    </button>
+    <button class="res-tab-btn" data-target="res-transfer">
+      <span class="tab-num">3</span> Transferability
+    </button>
+    <button class="res-tab-btn" data-target="res-robust">
+      <span class="tab-num">4</span> Robustness
+    </button>
+  </div>
+</div>
 
-<section class="section" style="margin-top: -1rem;">
+<!-- ── Sub-section 1: Overall Performance ── -->
+<section class="section" id="res-overall" style="padding-top: 3rem; padding-bottom: 3rem;">
   <div class="container is-max-widescreen">
-    <div class="columns is-variable is-6 is-centered">
+    <h3 class="results-sub-title">① Overall Performance</h3>
 
-      <!-- Left image -->
+    <figure class="image is-centered" style="width: 95%; margin: 1.25rem auto 0.5rem; text-align: center;">
+      <img src="./static/result1.png" alt="Overall performance comparison" style="width:100%; height:auto;" loading="lazy">
+      <figcaption style="text-align:center; margin-top:8px;">
+        <strong>Figure 3.</strong> Performance comparison between GEA and DGM (self-evolving baseline) on two coding benchmarks.
+        Under the same number of evolved agents, GEA exhibits substantially larger performance gains than DGM on both
+        SWE-bench and Polyglot, demonstrating the improved efficiency of group-level evolution.
+      </figcaption>
+    </figure>
+
+    <div class="columns is-variable is-5" style="margin-top: 1.5rem;">
+      <div class="column is-6">
+        <div style="background:#f8fafc; border-radius:12px; padding:20px 24px; height:100%;">
+          <p style="font-weight:600; color:#1e40af; font-size:16px; margin-bottom:6px;">
+            GEA vs. SOTA Open-Ended Self-Improving Methods
+          </p>
+          <p style="font-size:17px; color:#334155; margin:0;">
+            GEA demonstrates substantial performance improvements over DGM (71.0% vs. 56.7% on SWE-bench Verified; 88.3% vs. 68.3% on Polyglot).
+            Notably, GEA exhibits faster and more significant improvement than DGM in the <em>mid-to-late</em> evolutionary stages,
+            suggesting that experience sharing unlocks compounding gains over time.
+          </p>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div style="background:#f8fafc; border-radius:12px; padding:20px 24px; height:100%;">
+          <p style="font-weight:600; color:#6d28d9; font-size:16px; margin-bottom:6px;">
+            GEA vs. SOTA Human-Designed Coding Agents
+          </p>
+          <p style="font-size:17px; color:#334155; margin:0;">
+            Using meta-learning <em>without any human intervention</em>, GEA automatically evolves agent frameworks
+            that match or surpass carefully engineered human designs (71.0% vs. 71.8% on SWE-bench; 88.3% vs. 52.0% on Polyglot).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaway-box">
+      <span class="ta-label">Take-away:</span>
+      <p>Group-level evolution substantially outperforms isolated tree-structured self-improvement, both against automated baselines and human-engineered agents.</p>
+    </div>
+  </div>
+</section>
+
+<div class="results-divider"></div>
+
+<!-- ── Sub-section 2: Evolution Analysis ── -->
+<section class="section" id="res-evolution" style="padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="container is-max-widescreen">
+    <h3 class="results-sub-title">② Evolution Analysis</h3>
+
+    <div class="columns is-variable is-6 is-centered" style="margin-top:1rem;">
       <div class="column is-6 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/result2.png" alt="Result figure" style="width:100%; height:auto;">
         </figure>
         <p style="margin-top:8px; font-size:14px; color:#64748b;">
-          Figure 4. <strong>Evolution analysis of tool discovery and integration over iterations.</strong>
-  Each row (T1--T9) corresponds to a key tool-level functionality.
-  Blue markers indicate tools that have been discovered but not yet integrated into the current best agent,
-  while red markers indicate tools integrated into the best-performing agent.
+          <strong>Figure 4.</strong> Evolution analysis of tool discovery and integration over iterations.
+          Each row (T1–T9) corresponds to a key tool-level functionality.
+          <span style="color:#3b82f6;">●</span> Blue = discovered but not yet integrated;
+          <span style="color:#ef4444;">●</span> Red = integrated into the best-performing agent.
         </p>
       </div>
-
-      <!-- Right image -->
       <div class="column is-6 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/table1.jpg" alt="Table results" style="width:100%; height:auto;">
         </figure>
         <p style="margin-top:8px; font-size:14px; color:#64748b;">
-          <strong>Table 1.</strong> Comparison of performance (Success Rate) and ancestor integration across the Top-k agents on SWE-bench Verified.
-            Performance is reported as the <em>worst-case (minimum) success rate</em> among the top-k agents.
-            <em>Ancestor Count</em> denotes the count of unique historical agents integrated into the solution.
-            Notably, the worst-case performance of GEA's top-5 agents (58.3%) exceeds the single best agent from DGM (56.7%).
+          <strong>Table 1.</strong> Comparison of performance (Success Rate) and ancestor integration across the Top-<em>k</em> agents on SWE-bench Verified.
+          Performance is reported as the <em>worst-case (minimum) success rate</em> among the top-<em>k</em> agents.
+          <em>Ancestor Count</em> denotes the count of unique historical agents integrated into the solution.
+          Notably, GEA's worst-case top-5 performance (58.3%) <em>exceeds</em> the single best agent from DGM (56.7%).
         </p>
       </div>
+    </div>
 
+    <div class="takeaway-box">
+      <span class="ta-label">Take-away:</span>
+      <p>GEA more effectively converts early-stage exploratory diversity into sustained long-term progress, and consistently maintains a high-quality agent pool rather than a single lucky survivor.</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== Transferability ===================== -->
-<section class="section" style="margin-top: 0rem;">
-  <div class="container is-max-widescreen">
+<div class="results-divider"></div>
 
-    <!-- Full-width image -->
-    <div class="columns is-centered">
+<!-- ── Sub-section 3: Transferability ── -->
+<section class="section" id="res-transfer" style="padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="container is-max-widescreen">
+    <h3 class="results-sub-title">③ Transferability</h3>
+
+    <div class="columns is-centered" style="margin-top:1rem;">
       <div class="column is-12 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/tranfer_1.jpg" alt="Transferability figure 1" style="width:100%; height:auto;">
@@ -486,81 +643,97 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
       </div>
     </div>
 
-    <!-- Two half-width images side-by-side -->
     <div class="columns is-variable is-6 is-centered" style="margin-top: 0.75rem;">
-
       <div class="column is-6 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/transfer2.jpg" alt="Transferability figure 2" style="width:100%; height:auto;">
         </figure>
       </div>
-
       <div class="column is-6 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
           <img src="./static/transfer3.jpg" alt="Transferability figure 3" style="width:100%; height:auto;">
         </figure>
       </div>
-
     </div>
 
-    <!-- Take-away text -->
-    <div class="content" style="margin-top: 0.75rem;">
-      <p style="font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.8; color: #334155;">
-        <strong>Take-away:</strong> GEA discovers model-agnostic agent-level improvements that generalize across different foundation models.
-      </p>
+    <div class="takeaway-box">
+      <span class="ta-label">Take-away:</span>
+      <p>GEA discovers model-agnostic agent-level improvements that generalize across different foundation models.</p>
     </div>
-
   </div>
 </section>
-<!-- ===================== /Transferability ===================== -->
 
+<div class="results-divider"></div>
 
-<!-- ===================== Robustness ===================== -->
-<section class="section" style="margin-top: 1rem;">
+<!-- ── Sub-section 4: Robustness ── -->
+<section class="section" id="res-robust" style="padding-top: 3rem; padding-bottom: 3.5rem;">
   <div class="container is-max-widescreen">
+    <h3 class="results-sub-title">④ Robustness</h3>
 
-    <div class="columns is-variable is-6 is-centered">
-
-      <!-- Left: 0.7 width -->
+    <div class="columns is-variable is-6 is-centered" style="margin-top:1rem;">
       <div class="column is-8 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/robustness.png"
-               alt="Robustness comparison"
-               style="width:100%; height:auto;">
+          <img src="./static/robustness.png" alt="Robustness comparison" style="width:100%; height:auto;">
         </figure>
         <p style="margin-top:8px; font-size:14px; color:#64748b;">
-          <strong>Figure.</strong> Compare two settings (GEA v.s. Self-evolution), robustness test.
+          <strong>Figure 5.</strong> Robustness test comparing GEA vs. self-evolution under injected framework-level bugs.
         </p>
       </div>
-
-      <!-- Right: 0.3 width -->
       <div class="column is-4 has-text-centered">
         <figure class="image" style="background:#f8fafc; padding:12px; border-radius:12px;">
-          <img src="./static/robustness2.png"
-               alt="Robustness table"
-               style="width:100%; height:auto;">
+          <img src="./static/robustness2.png" alt="Robustness table" style="width:100%; height:auto;">
         </figure>
         <p style="margin-top:8px; font-size:14px; color:#64748b;">
-          <strong>Table 2.</strong> Robustness to framework-level bugs. We report the number of evolution
-          iterations required to repair injected bugs across five independent trials (E1–E5).
-          Each entry denotes the number of iterations needed for the agent to successfully repair
-          the injected framework-level bug in a given trial. Lower means that GEA repairs bugs
-          significantly faster than DGM.
+          <strong>Table 2.</strong> Robustness to framework-level bugs. Number of evolution iterations required to repair injected bugs
+          across five independent trials (E1–E5). GEA repairs bugs in <strong>1.4 iterations</strong> on average vs. <strong>5 iterations</strong> for DGM.
         </p>
       </div>
-
     </div>
 
-    <!-- Take-away -->
-    <div class="content" style="margin-top: 0.75rem;">
-      <p style="font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.8; color: #334155;">
-        <strong>Take-away:</strong> Experience sharing enables stronger robustness.
-      </p>
+    <div class="takeaway-box">
+      <span class="ta-label">Take-away:</span>
+      <p>Experience sharing enables significantly stronger robustness — GEA self-repairs bugs ~3.5× faster than isolated self-evolution.</p>
     </div>
-
   </div>
 </section>
-<!-- ===================== /Robustness ===================== -->
+<!-- ===================== /Results & Analysis ===================== -->
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.res-tab-btn');
+  var sections = ['res-overall', 'res-evolution', 'res-transfer', 'res-robust'];
+
+  // Click → smooth scroll
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.dataset.target);
+      if (!target) return;
+      var navH = document.getElementById('results-tab-nav').offsetHeight;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - navH - 8;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+
+  // Scroll → highlight active tab
+  function onScroll() {
+    var navH = document.getElementById('results-tab-nav').offsetHeight;
+    var scrollY = window.pageYOffset + navH + 32;
+    var active = sections[0];
+    sections.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top + window.pageYOffset <= scrollY) {
+        active = id;
+      }
+    });
+    tabs.forEach(function (btn) {
+      btn.classList.toggle('is-active', btn.dataset.target === active);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 
 <!-- 固定布局的 BibTeX 部分 -->
 <section class="section" id="BibTeX">
@@ -660,99 +833,6 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
     </div>
   </div>
 </footer>
-
-
-<!-- ===================== Results & Analysis ===================== -->
-<section class="section" id="results">
-  <div class="container is-max-widescreen">
-
-    <h2 class="section-title">Results & Analysis</h2>
-
-    <!-- Tabs navigation -->
-    <div class="tabs is-centered is-boxed is-medium" style="margin-bottom: 1.5rem;">
-      <ul>
-        <li class="is-active"><a href="#results-overall">Overall Performance</a></li>
-        <li><a href="#results-evolution">Evolution Analysis</a></li>
-        <li><a href="#results-transfer">Transferability</a></li>
-        <li><a href="#results-robustness">Robustness</a></li>
-      </ul>
-    </div>
-
-    <!-- Overall Performance -->
-    <div id="results-overall" style="margin-bottom: 3rem;">
-      <h3 class="title is-4">Overall performance</h3>
-
-      <figure class="image" style="width: 95%; margin: 0 auto 1rem;">
-        <img src="./static/result1.png" alt="Performance comparison">
-        <figcaption style="text-align: center; font-size: 14px; color:#64748b;">
-          Figure 3. Performance comparison between GEA and DGM on SWE-bench and Polyglot.
-        </figcaption>
-      </figure>
-
-      <div class="content">
-        <ul>
-          <li><strong>GEA vs open-ended self-improving baseline:</strong> GEA achieves substantially stronger performance than DGM.</li>
-          <li><strong>Faster improvement:</strong> GEA improves more rapidly in mid-to-late evolution stages.</li>
-          <li><strong>GEA vs human-designed agents:</strong> GEA automatically evolves competitive or superior frameworks without human engineering.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Evolution Analysis -->
-    <div id="results-evolution" style="margin-bottom: 3rem;">
-      <h3 class="title is-4">Evolution analysis</h3>
-
-      <div class="columns is-variable is-6 is-centered">
-
-        <div class="column is-6 has-text-centered">
-          <img src="./static/result2.png" alt="Evolution analysis">
-        </div>
-
-        <div class="column is-6 has-text-centered">
-          <img src="./static/table1.jpg" alt="Table results">
-        </div>
-
-      </div>
-
-      <p class="content">
-        Experience sharing enables discovery and integration of useful tools over evolution.
-      </p>
-    </div>
-
-    <!-- Transferability -->
-    <div id="results-transfer" style="margin-bottom: 3rem;">
-      <h3 class="title is-4">Transferability</h3>
-
-      <img src="./static/tranfer_1.jpg" alt="Transferability">
-
-      <p class="content">
-        Improvements discovered by GEA generalize across foundation models.
-      </p>
-    </div>
-
-    <!-- Robustness -->
-    <div id="results-robustness" style="margin-bottom: 3rem;">
-      <h3 class="title is-4">Robustness</h3>
-
-      <div class="columns is-centered">
-
-        <div class="column is-8">
-          <img src="./static/robustness.png">
-        </div>
-
-        <div class="column is-4">
-          <img src="./static/robustness2.png">
-        </div>
-
-      </div>
-
-      <p class="content">
-        Experience sharing improves robustness and accelerates bug recovery.
-      </p>
-    </div>
-
-  </div>
-</section>
 
 </body>
 </html>
