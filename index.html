@@ -653,6 +653,84 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
   letter-spacing: -0.01em;
 }
 
+/* ── Evolutionary pattern arrow chains ── */
+.evo-chain-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.evo-chain-label {
+  flex: 0 0 100px;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+}
+.evo-label-green { background: #dcfce7; color: #15803d; }
+.evo-label-blue  { background: #dbeafe; color: #1d4ed8; }
+
+.evo-chain-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+.evo-node {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 17px;
+  color: #1e293b;
+  line-height: 1.5;
+}
+.evo-node-result {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
+  text-align: center;
+}
+.evo-node-result-blue {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1e3a8a;
+}
+.evo-arrow {
+  font-size: 20px;
+  color: #94a3b8;
+  line-height: 1;
+  padding-top: 8px;
+}
+.evo-sub {
+  font-size: 14px;
+  opacity: 0.8;
+  display: block;
+}
+
+/* ── Analysis paragraph box ── */
+.analysis-box {
+  margin-top: 1.5rem;
+  padding: 20px 26px;
+  background: #f8fafc;
+  border-left: 4px solid #94a3b8;
+  border-radius: 0 10px 10px 0;
+}
+.analysis-box p {
+  font-size: 22px !important;
+  color: #111827 !important;
+  line-height: 1.8;
+  margin: 0;
+}
+.analysis-heading {
+  font-weight: 700;
+  color: #0f172a !important;
+  margin-bottom: 0.6rem !important;
+}
+
 /* ── Takeaway callout ── */
 .takeaway-box {
   display: flex;
@@ -751,9 +829,50 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
       </div>
     </div>
 
+    <!-- Analysis of evolutionary patterns -->
+    <div class="analysis-box">
+      <p class="analysis-heading">Analysis of evolutionary patterns on two benchmarks.</p>
+      <p style="margin-bottom: 1.25rem;">
+        The two benchmarks differ in task complexity, giving rise to distinct evolutionary dynamics.
+      </p>
+
+      <!-- Polyglot chain -->
+      <div class="evo-chain-row">
+        <div class="evo-chain-label evo-label-green">Polyglot</div>
+        <div class="evo-chain-nodes">
+          <div class="evo-node">single-file edits from scratch</div>
+          <span class="evo-arrow">→</span>
+          <div class="evo-node">lower editing complexity, no multi-file coordination</div>
+          <span class="evo-arrow">→</span>
+          <div class="evo-node">larger, more concentrated patches per iteration</div>
+          <span class="evo-arrow">→</span>
+          <div class="evo-node evo-node-result">88.3% in <strong>4 iterations</strong><br><span class="evo-sub">8,677 lines added</span></div>
+        </div>
+      </div>
+
+      <!-- SWE-bench chain -->
+      <div class="evo-chain-row" style="margin-top: 1rem;">
+        <div class="evo-chain-label evo-label-blue">SWE-bench</div>
+        <div class="evo-chain-nodes">
+          <div class="evo-node">coordinated multi-file modifications</div>
+          <span class="evo-arrow">→</span>
+          <div class="evo-node">requires understanding inter-file dependencies</div>
+          <span class="evo-arrow">→</span>
+          <div class="evo-node">smaller, more distributed patches</div>
+          <span class="evo-arrow">→</span>
+          <div class="evo-node evo-node-result evo-node-result-blue">71.0% in <strong>8 iterations</strong><br><span class="evo-sub">9,663 lines added</span></div>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.25rem; margin-bottom: 0;">
+        GEA does not follow a fixed mutation pattern — it self-adjusts its evolutionary strategy based on the underlying problem structure.
+      </p>
+    </div>
+
     <div class="takeaway-box">
       <span class="ta-label">Take-away:</span>
-      <p>Group-level evolution substantially outperforms isolated tree-structured self-improvement, both against automated baselines and human-engineered agents.</p>
+      <p style="margin-bottom: 0.4rem;">1. Group-level evolution substantially outperforms SOTA open-ended self-improving methods, and matches SOTA human-engineered coding agents.</p>
+      <p>2. GEA does not follow a fixed mutation pattern — it self-adjusts its evolutionary strategy based on the underlying problem structure.</p>
     </div>
   </div>
 </section>
@@ -792,7 +911,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 
     <div class="takeaway-box">
       <span class="ta-label">Take-away:</span>
-      <p>GEA more effectively converts early-stage exploratory diversity into sustained long-term progress, and consistently maintains a high-quality agent pool rather than a single lucky survivor.</p>
+      <p>GEA more effectively converts early-stage exploratory diversity into sustained long-term progress, and consistently maintains a high-quality agent pool.</p>
     </div>
   </div>
 </section>
@@ -861,7 +980,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 
     <div class="takeaway-box">
       <span class="ta-label">Take-away:</span>
-      <p>Experience sharing enables significantly stronger robustness — GEA self-repairs bugs ~3.5× faster than isolated self-evolution.</p>
+      <p>Experience sharing enables significantly stronger robustness.</p>
     </div>
   </div>
 </section>
