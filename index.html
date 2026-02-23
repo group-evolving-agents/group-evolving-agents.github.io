@@ -99,8 +99,8 @@ figcaption {
 /* ===== Global: force Source Serif 4 everywhere ===== */
 html, body {
   font-family: 'Source Serif 4', serif !important;
-  font-size: 18px;
-  line-height: 1.75;
+  font-size: 20px;     /* ← 从 18 改为 20 */
+  line-height: 1.8;    /* ← 同时略微增加行距 */
   color: #334155;
 }
 
@@ -303,14 +303,12 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
   <div class="container is-max-widescreen">
 
     <!-- Title -->
-    <div class="columns is-centered has-text-centered" style="margin-bottom: 1.5rem;">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3" style="margin-bottom: 0.5rem;">Methodology</h2>
-        <p class="is-size-6" style="color: #64748b;">
-          Parent Group Selection + Open-Ended Group Evolution
-        </p>
-      </div>
-    </div>
+  <div style="margin-bottom: 2rem;">
+    <h2 class="section-title">Methodology</h2>
+    <p class="is-size-6" style="color: #64748b; margin-top: 8px;">
+    Parent Group Selection + Open-Ended Group Evolution
+    </p>
+  </div>
 
 
     <!-- Row 1: top image + Stage1 -->
