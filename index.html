@@ -63,7 +63,7 @@ body {
   font-family: 'Source Serif 4', serif;
   font-size: 18px;
   line-height: 1.8;
-  color: #334155;
+  color: #111827;
 }
 
 /* Figure captions */
@@ -99,12 +99,12 @@ figcaption {
 /* ===== Global: force Source Serif 4 everywhere ===== */
 html, body {
   font-family: 'Source Serif 4', serif !important;
-  font-size: 20px;     /* ← 从 18 改为 20 */
-  line-height: 1.8;    /* ← 同时略微增加行距 */
-  color: #334155;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #111827;
 }
 
-/* Make sure ALL elements inherit Source Serif (override Bulma & inline-ish class rules) */
+/* Make sure ALL elements inherit Source Serif */
 * {
   font-family: inherit;
 }
@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6,
 .publication-authors,
 .author-block {
   font-family: 'Source Serif 4', serif !important;
-  color: #0f172a;
+  color: #0a0a0a;
 }
 
 /* Buttons / navbar / misc UI text */
@@ -134,16 +134,16 @@ p,
   font-family: 'Source Serif 4', serif !important;
   font-size: 20px;
   line-height: 1.8;
-  line-height: 1.8;
-  color: #334155;
+  color: #111827;
 }
 
-/* Figure captions */
+/* Figure captions — stay gray for hierarchy */
 figcaption,
+.fig-caption,
 p[style*="font-size:14px"] {
   font-family: 'Source Serif 4', serif !important;
   font-size: 14px;
-  color: #64748b;
+  color: #64748b !important;
 }
 
 /* Code/BibTeX blocks */
@@ -161,7 +161,7 @@ figcaption,
   margin-top: 10px !important;
   text-align: left !important;
 }
-figcaption strong, .fig-caption strong { color: #334155 !important; }
+figcaption strong, .fig-caption strong { color: #111827 !important; }
 
 /* ── Unified figure card wrapper ── */
 .fig-card {
@@ -211,14 +211,14 @@ figcaption strong, .fig-caption strong { color: #334155 !important; }
 }
 .hero-contrib-item:last-child { border-bottom: none; }
 .hero-contrib-icon {
-  width: 36px; height: 36px;
-  flex: 0 0 36px;
+  width: 40px; height: 40px;
+  flex: 0 0 40px;
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 17px;
+  font-size: 20px;
   margin-top: 1px;
 }
-.hero-contrib-text { flex: 1; font-size: 16px; line-height: 1.6; color: #334155; }
+.hero-contrib-text { flex: 1; font-size: 18px; line-height: 1.65; color: #111827; }
 .hero-contrib-text strong { font-weight: 700; }
 .hc-blue   { background: #dbeafe; }
 .hc-teal   { background: #ccfbf1; }
@@ -272,7 +272,7 @@ figcaption strong, .fig-caption strong { color: #334155 !important; }
   padding: 5px 12px;
   font-family: 'Source Serif 4', serif;
   font-size: 13px;
-  color: #475569;
+  color: #111827;
   background: #ffffff;
   border: 1px solid #cbd5e1;
   border-radius: 6px;
@@ -502,7 +502,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
         <div style="width:32px;height:32px;border-radius:9999px;background:#dbeafe;color:#1d4ed8;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">1</div>
         <div style="flex: 1;">
           <h3 class="title is-4" style="margin-bottom: 0.5rem;">Stage 1: Parent Group Selection</h3>
-          <p style="color: #0c4a6e; line-height: 1.8; font-size: 1.05rem;">
+          <p style="color: #0c3547; line-height: 1.8; font-size: 1.05rem;">
             At each iteration, <strong>GEA</strong> selects a parent group using a <strong>Performance-Novelty criterion</strong>.
             <br><br>
             The key idea is to balance <strong>immediate task-solving competence</strong> with <strong>long-term evolutionary diversity and potential</strong>.
@@ -547,7 +547,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
         <div style="width:32px;height:32px;border-radius:9999px;background:#ede9fe;color:#6d28d9;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">2</div>
         <div style="flex: 1;">
           <h3 class="title is-4" style="margin-bottom: 0.5rem;">Stage 2: Open-Ended Group Evolution</h3>
-          <p style="color: #3b0764; line-height: 1.8; font-size: 1.05rem;">
+          <p style="color: #2d0a52; line-height: 1.8; font-size: 1.05rem;">
             The parent group <strong>jointly produces</strong> an offspring agent group by aggregating
             evolutionary experiences into <strong>a shared experience pool</strong>.
             This pool — including tool-use traces, patches, and successful strategies —
@@ -658,7 +658,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
 }
 .takeaway-box p {
   font-size: 17px !important;
-  color: #0c4a6e !important;
+  color: #0c3547 !important;
   margin: 0 !important;
 }
 
