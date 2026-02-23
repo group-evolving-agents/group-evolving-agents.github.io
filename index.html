@@ -200,6 +200,7 @@ figcaption strong, .fig-caption strong { color: #111827 !important; }
   pointer-events: none;
 }
 .hero-contributions {
+  width: min(980px, 80vw);
   max-width: 980px;
   margin: 2rem auto 0;
   display: flex;
@@ -349,7 +350,7 @@ figcaption strong, .fig-caption strong { color: #111827 !important; }
   <div class="hero-body" style="padding-bottom: 3.5rem;">
     <div class="container is-max-widescreen">
       <div class="columns is-centered">
-        <div class="column has-text-centered">
+        <div class="column has-text-centered" style="max-width: none;">
           <h1 class="title is-1 publication-title">Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing
 </h1>
           <div class="is-size-5 publication-authors">
@@ -361,10 +362,10 @@ figcaption strong, .fig-caption strong { color: #111827 !important; }
               <a href="https://dnathani.net"> Deepak Nathani</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://namezhenzhang.github.io">Zhen Zhang</a>,
+              <a href="https://namezhenzhang.github.io">Zhen Zhang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sophiapx.github.io">Xiao Pu</a>,
+              <a href="https://sophiapx.github.io">Xiao Pu</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://eric-xw.github.io/">Xin Eric Wang</a><sup>1</sup>,
@@ -872,7 +873,7 @@ We evaluate GEA on challenging coding benchmarks, where it significantly outperf
     <div class="takeaway-box">
       <span class="ta-label">Take-away:</span>
       <p style="margin-bottom: 0.4rem;">1. Group-level evolution substantially outperforms SOTA open-ended self-improving methods, and matches SOTA human-engineered coding agents.</p>
-      <p>2. GEA does not follow a fixed mutation pattern — it self-adjusts its evolutionary strategy based on the underlying problem structure.</p>
+      <p>2. GEA adapts its evolutionary behavior to varying task complexity, demonstrating the flexibility and generality of group-level meta-learning across different problem settings.</p>
     </div>
   </div>
 </section>
