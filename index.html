@@ -40,7 +40,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
 
-<style>
+<!-- <style>
 body {
   font-family: 'Inter', sans-serif;
   color: #0f172a;
@@ -72,8 +72,58 @@ figcaption {
   font-size: 14px;
   color: #64748b;
 }
-</style>
+</style> -->
+<style>
+/* ===== Global body text (main content) ===== */
+body {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #334155;
+}
 
+/* ===== Titles / UI / metadata stay modern (Inter) ===== */
+.title,
+.publication-title,
+.publication-authors,
+.author-block,
+.button,
+.navbar,
+figcaption,
+.caption,
+.is-size-6,
+.is-size-5 {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Title styling */
+.publication-title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+/* Make sure headings look dark */
+h1, h2, h3, h4, h5, h6 {
+  color: #0f172a;
+}
+
+/* Paragraphs inside .content keep the same global style (optional but fine) */
+.content p {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #334155;
+}
+
+/* Figure captions */
+figcaption,
+p[style*="font-size:14px"] {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #64748b;
+}
+</style>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
